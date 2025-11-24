@@ -46,3 +46,29 @@ class GameState {
     );
   }
 }
+
+GameState copyWith({
+  int? currentQuestionIndex,
+  List<WordData>? selectedWords,
+  String? currentWords,
+  int? currentCharIndex,
+  String? userInput,
+  DateTime? startTime,
+  int? correctChars,
+  int? totalChars,
+  int? mistakes,
+  GameStatus? gameStatus,
+}) {
+  return GameState(
+    currentQuestionIndex: currentQuestionIndex ?? this.currentQuestionIndex,
+    selectedWords: selectedWords ?? this.selectedWords,
+    currentWords: currentWords ?? this.currentWords,
+    currentCharIndex: currentCharIndex ?? this.currentCharIndex,
+    userInput: userInput ?? this.userInput,
+    startTime: startTime ?? this.startTime,
+    correctChars: correctChars ?? this.correctChars,
+    totalChars: totalChars ?? this.totalChars,
+    mistakes: mistakes ?? this.mistakes,
+    gameStatus: gameStatus ?? this.gameStatus,
+  );
+}
